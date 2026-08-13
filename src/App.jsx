@@ -301,6 +301,7 @@ function App() {
 
   const handleShare = () => {
     if (!generatedImage) {
+      alert("Please generate your Builder ID first.");
       return;
     }
 
@@ -313,15 +314,28 @@ function App() {
           `Building in Goa. Shipping with the crew.\n\n` +
           `#FrameInGoa #HackerHouseGoa`;
 
-    const xUrl =
-      `https://twitter.com/intent/tweet?text=` +
-      encodeURIComponent(shareText);
+    // Your deployed Hacker House Goa generator
+    const websiteUrl =
+      "https://task1-six-nu.vercel.app/";
 
-    window.open(
+    const xUrl =
+      "https://x.com/intent/post?" +
+      "text=" +
+      encodeURIComponent(shareText) +
+      "&url=" +
+      encodeURIComponent(websiteUrl);
+
+    // Try opening X in a new tab
+    const newWindow = window.open(
       xUrl,
       "_blank",
       "noopener,noreferrer"
     );
+
+    // Fallback if browser blocks the popup
+    if (!newWindow) {
+      window.location.href = xUrl;
+    }
   };
 
   // ==========================================================
