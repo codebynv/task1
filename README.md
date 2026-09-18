@@ -56,6 +56,19 @@
 
 ---
 
+<div align="center">
+
+## 🟨 OPEN TRIAL / BUILDER EXPERIENCE 🟩
+
+**A tiny event tool with a very specific job: make builders visible.**
+
+</div>
+
+> **FIELD NOTE / HH26**  
+> The README follows the same visual idea as the product: bold blocks, compact labels, bright accents, and a clear path from **person → identity → shareable artifact**.
+
+---
+
 # 01 · THE OPEN TRIAL
 
 > **HACKER HOUSE GOA 2026 · TASK #1**  
@@ -386,7 +399,7 @@ GOA-INSPIRED DETAILS
 HH GOA BUILDER IDENTITY
 ```
 
-The same language appears across the README so opening the repository feels like opening another piece of the event experience.
+The same language is repeated across the repository so the README feels closer to an **event artifact** than a conventional software manual.
 
 ---
 
@@ -428,6 +441,12 @@ The same language appears across the README so opening the repository feels like
 `Download + X share`
 
 ---
+
+<div align="center">
+
+## 🟨 MAKE IT → POST IT → GET BACK TO BUILDING 🟩
+
+</div>
 
 # 08 · SHARE-FIRST BY DESIGN
 
@@ -500,6 +519,12 @@ No unnecessary workflow.
 Just the builder → identity → artifact.
 
 ---
+
+<div align="center">
+
+## 🟩 WHAT ACTUALLY HAPPENS BEHIND THE FRAME 🟨
+
+</div>
 
 # 11 · UNDER THE HOOD
 
@@ -669,6 +694,14 @@ npm run lint
 ```
 
 ---
+
+<div align="center">
+
+# 🩷 SHIPPED. LIVE. SHAREABLE. 🟨
+
+### **TASK #01 · HACKER HOUSE GOA '26**
+
+</div>
 
 # 15 · SHIPPED
 
