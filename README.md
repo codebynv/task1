@@ -1,45 +1,80 @@
-# Hacker House Goa 2026 — Builder ID & Team Frame Generator
+<div align="center">
 
-> Create a personalized Hacker House Goa 2026 Builder ID from your photo, or combine 2–3 builders into a shareable team frame.
+# HACKER HOUSE GOA '26
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-task1--six--nu.vercel.app-0b6b3a?style=for-the-badge)](https://task1-six-nu.vercel.app/)
-[![React](https://img.shields.io/badge/React-19-61dafb?style=for-the-badge&logo=react)](https://react.dev/)
-[![Vite](https://img.shields.io/badge/Vite-8-646cff?style=for-the-badge&logo=vite)](https://vite.dev/)
-[![Deploy](https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/)
+### TASK #1 · BUILDER ID & TEAM FRAME GENERATOR
 
-## ✦ Live Demo
+**UPLOAD → BUILD YOUR IDENTITY → SHARE**
 
-**https://task1-six-nu.vercel.app/**
+[![HH Goa 2026](https://img.shields.io/badge/HACKER%20HOUSE-GOA%20'26-0B6B3A?style=for-the-badge&labelColor=FFE500)](https://hhgoa.com/)
+[![Open Trial](https://img.shields.io/badge/OPEN%20TRIAL-TASK%20%231-FF2A8A?style=for-the-badge)](https://hhgoa.com/)
+[![React](https://img.shields.io/badge/React-19-0B6B3A?style=for-the-badge&logo=react&logoColor=FFE500)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-8-FF2A8A?style=for-the-badge&logo=vite&logoColor=F7F0D0)](https://vite.dev/)
+[![Deploy](https://img.shields.io/badge/DEPLOYED-VERCEL-0B6B3A?style=for-the-badge&logo=vercel&logoColor=FFE500)](https://vercel.com/)
 
-Upload a photo, enter your identity, choose your stack, and generate a Hacker House Goa themed Builder ID in seconds.
+**[LIVE DEMO → task1-six-nu.vercel.app](https://task1-six-nu.vercel.app/)**
 
----
-
-## 🎯 What It Does
-
-### Builder ID
-
-- Upload **JPG, PNG, or HEIC** photos.
-- Enter **name, role, and tech stack**.
-- Automatically generate a Hacker House style **Builder Persona / Class**.
-- Generate a unique **Builder ID**.
-- Render the final identity card as a real **PNG** in the browser.
-- Download the generated card instantly.
-- Open a pre-filled **X post** with the Builder/Team caption, hashtags, and live app URL.
-
-### Team Frame
-
-- Choose **2 or 3 builders**.
-- Add a name and photo for each builder.
-- Generate a combined Hacker House Goa team frame.
-- Download the result as PNG.
-- Share the result through the X flow.
+</div>
 
 ---
 
-## ✨ Smart Builder Persona Engine
+## THE TASK
 
-The app maps role + stack combinations into themed Builder Classes.
+Build a web tool where a user uploads a photo and instantly gets a branded Hacker House Goa 2026 graphic ready to download and share on X.
+
+The brief allows a **PFP Frame / Overlay** or a **Builder ID Card**. This implementation supports the Builder ID flow and extends it with a combined **2–3 builder Team Frame** flow. The required path is:
+
+```text
+UPLOAD
+  ↓
+PERSONALIZE
+  ↓
+GENERATE
+  ↓
+PREVIEW
+  ↓
+DOWNLOAD / SHARE TO X
+```
+
+The official brief calls for common image formats including JPG, PNG and HEIC, fast generation, handling varied photo aspect ratios, a real downloadable image file, a working X share flow with `#FrameInGoa`, and mobile-friendly use.
+
+---
+
+## WHAT I BUILT
+
+### 01 · BUILDER ID
+
+A single photo becomes a personalized Hacker House Goa builder identity.
+
+**Inputs**
+
+- Photo
+- Name
+- Role
+- Tech stack
+
+**Generated output**
+
+- Builder Persona / Class
+- Unique Builder ID
+- Branded identity graphic
+- Downloadable PNG
+- Pre-filled X sharing flow
+
+### 02 · TEAM FRAME
+
+The app also supports a combined frame for **2 or 3 builders**.
+
+Each builder contributes:
+
+- Name
+- Photo
+
+The renderer combines them into one shareable HH Goa themed graphic.
+
+### 03 · SMART BUILDER PERSONA
+
+Role + stack are mapped into themed Builder Classes:
 
 | Area | Builder Class |
 |---|---|
@@ -53,68 +88,70 @@ The app maps role + stack combinations into themed Builder Classes.
 | Backend | **SYSTEM BUILDER** |
 | Frontend | **PIXEL ARCHITECT** |
 
-The persona engine gives stronger weight to role matches than stack-only matches and uses rule priority to resolve ties. 
+Role matches receive stronger weight than stack-only matches, with priority rules used for ties.
 
 ---
 
-## 🛠 Tech Stack
-
-- **React 19** — application UI and state
-- **Vite 8** — development and production build tooling
-- **HTML Canvas API** — client-side Builder ID and team-frame rendering
-- **HEIC support** — browser-side conversion with `heic-to`
-- **CSS** — responsive layout, theme, interactions, and animations
-- **Vercel** — production deployment
-
-The core generation flow does not require a backend, database, or login.
-
----
-
-## 🧩 Architecture
+## ARCHITECTURE
 
 ```text
-                    USER PHOTO
-                        │
-                        ▼
-               ┌─────────────────┐
-               │  PhotoUploader  │
-               └────────┬────────┘
-                        │
-                  JPG / PNG / HEIC
-                        │
-                        ▼
-              ┌────────────────────┐
-              │   Identity Form    │
-              │ Name / Role /      │
-              │ Tech Stack         │
-              └─────────┬──────────┘
-                        │
-                        ▼
-              ┌────────────────────┐
-              │ Persona Engine     │
-              │ Persona + Category │
-              └─────────┬──────────┘
-                        │
-              ┌─────────┴─────────┐
-              │                   │
-              ▼                   ▼
-      Builder Renderer      Team Renderer
-      Individual ID         2–3 Builder Frame
-              │                   │
-              └─────────┬─────────┘
-                        ▼
-               ┌─────────────────┐
-               │   PNG Output    │
-               └───────┬─────────┘
-                       │
-                ┌──────┴──────┐
-                ▼             ▼
-            Download       Share to X
+                         USER
+                          │
+                          ▼
+                 ┌─────────────────┐
+                 │  PhotoUploader  │
+                 └────────┬────────┘
+                          │
+                    JPG / PNG / HEIC
+                          │
+                          ▼
+                 ┌─────────────────┐
+                 │ Identity Form   │
+                 │ Name / Role /   │
+                 │ Tech Stack      │
+                 └────────┬────────┘
+                          │
+                          ▼
+                 ┌─────────────────┐
+                 │ Persona Engine  │
+                 │ Class + Category│
+                 └────────┬────────┘
+                          │
+                 ┌────────┴────────┐
+                 │                 │
+                 ▼                 ▼
+          Builder Renderer    Team Renderer
+          Individual ID       2–3 Builder Frame
+                 │                 │
+                 └────────┬────────┘
+                          ▼
+                 ┌─────────────────┐
+                 │    PNG Output   │
+                 └────────┬────────┘
+                          │
+                   ┌──────┴──────┐
+                   ▼             ▼
+               DOWNLOAD       SHARE TO X
 ```
+
+The core image-generation flow runs client-side. No custom backend, database, or login is required.
 
 ---
 
-## 📁 Project Structure
+## TECH STACK
+
+| Technology | Role |
+|---|---|
+| **React 19** | UI and state |
+| **Vite 8** | Build tooling |
+| **HTML Canvas API** | Builder ID + team-frame rendering |
+| **heic-to** | Browser-side HEIC conversion |
+| **CSS** | Responsive layout, theme, interactions and animation |
+| **Vercel** | Deployment |
+
+---
+
+## PROJECT STRUCTURE
 
 ```text
 src/
@@ -133,24 +170,17 @@ src/
 
 ### Key modules
 
-**`src/canvas/renderer.js`**  
-Renders the individual Builder ID card using Canvas.
-
-**`src/canvas/teamRenderer.js`**  
-Renders 1–3 builder team compositions with the HH Goa visual system.
-
-**`src/utils/personaEngine.js`**  
-Scores role and stack keywords and returns the strongest Builder Persona + category.
-
-**`src/utils/builderId.js`**  
-Creates Builder IDs with an HH26 prefix, initials, and a four-digit numeric suffix.
-
-**`src/components/PhotoUploader.jsx`**  
-Handles photo selection, validation, preview, and HEIC conversion.
+| Module | Responsibility |
+|---|---|
+| `src/canvas/renderer.js` | Individual Builder ID renderer |
+| `src/canvas/teamRenderer.js` | 2–3 builder team composition |
+| `src/utils/personaEngine.js` | Role + stack → Builder Persona |
+| `src/utils/builderId.js` | HH26 Builder ID generation |
+| `src/components/PhotoUploader.jsx` | Selection, validation, preview and HEIC conversion |
 
 ---
 
-## 🚀 Run Locally
+## RUN LOCALLY
 
 ### Requirements
 
@@ -175,7 +205,7 @@ npm run dev
 npm run build
 ```
 
-### Preview production build
+### Preview
 
 ```bash
 npm run preview
@@ -189,65 +219,62 @@ npm run lint
 
 ---
 
-## 📱 User Flow
+## VISUAL SYSTEM
+
+The product follows the visual language of Hacker House Goa 2026:
+
+| Brand element | Used as |
+|---|---|
+| **Goa green** | Primary structural colour |
+| **Electric yellow** | Headlines, accents and selection states |
+| **Hot pink** | Secondary accent |
+| **Cream** | Typography and soft surfaces |
+| **Poster / event-pass language** | Builder identity cards |
+| **Goa motifs** | Sun / palm / beach-inspired details |
+
+The identity hierarchy stays intentionally direct:
 
 ```text
-Upload
+PHOTO
   ↓
-Personalize
+NAME
   ↓
-Generate
+ROLE
   ↓
-Preview
+BUILDER CLASS
   ↓
-Download / Share
+TECH STACK
+  ↓
+BUILDER ID
 ```
 
-The UI is responsive for desktop and mobile. Generated images are independent of the page layout and can be downloaded as PNGs.
+---
 
-The X action opens a pre-filled post containing the generated Builder/Team caption, `#FrameInGoa`, `#HackerHouseGoa`, and the live generator URL.
+## SHARE FLOW
+
+The generated result can be downloaded as a PNG and shared through the X flow.
+
+The pre-filled share text includes `#FrameInGoa` and `#HackerHouseGoa` together with the live generator URL.
 
 ---
 
-## 🎨 Visual Direction
+## HH GOA 2026 · OPEN TRIAL
 
-The product follows the Hacker House Goa visual language:
+**Task #1 — Builder ID & Team Frame Generator**
 
-- Deep Goa green
-- Electric yellow
-- Hot pink accents
-- Cream typography
-- Sun and palm motifs
-- Event-pass / poster-inspired framing
-- Responsive animated UI
+**Live:** https://task1-six-nu.vercel.app/  
+**Repository:** https://github.com/codebynv/task1
 
-The individual Builder ID hierarchy is intentionally clear:
-
-**Photo → Name → Role → Builder Class → Stack → Builder ID**
+Built for the Hacker House Goa 2026 Open Trials.
 
 ---
 
-## 🔒 Processing
+<div align="center">
 
-The core image generation flow is client-side. Photos are used in the browser to create the generated PNG and the core flow does not depend on a custom application database or user account.
+### BUILD · SHIP · LAUNCH
 
----
+**HACKER HOUSE GOA 2026**
 
-## 🌴 Hacker House Goa 2026
+[hhgoa.com](https://hhgoa.com/) · [@codebynv](https://github.com/codebynv)
 
-Built for the **Hacker House Goa 2026 Frame / ID Card Generator** task.
-
-**Build · Ship · Launch**
-
-`#FrameInGoa` `#HackerHouseGoa`
-
----
-
-## 👨‍💻 Author
-
-**Nirav Vala**  
-GitHub: [@codebynv](https://github.com/codebynv)
-
-Project: [github.com/codebynv/task1](https://github.com/codebynv/task1)
-
-Live: [task1-six-nu.vercel.app](https://task1-six-nu.vercel.app/)
+</div>
