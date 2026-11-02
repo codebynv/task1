@@ -1,93 +1,23 @@
+const hasTerm = (value, terms) => {
+  const normalized = String(value).toLowerCase();
+  return terms.some((term) => {
+    const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    return new RegExp(`(^|[^a-z0-9])${escaped}($|[^a-z0-9])`, "i").test(normalized);
+  });
+};
+
 export function generateBuilderTitle(role = "", stack = "") {
-  const value =
-    `${role} ${stack}`.toLowerCase();
+  const value = `${role} ${stack}`;
 
-  if (
-    value.includes("ai") ||
-    value.includes("artificial intelligence") ||
-    value.includes("machine learning") ||
-    value.includes("ml") ||
-    value.includes("deep learning")
-  ) {
-    return "MODEL TAMER";
-  }
-
-  if (
-    value.includes("frontend") ||
-    value.includes("front end") ||
-    value.includes("react") ||
-    value.includes("next.js") ||
-    value.includes("nextjs") ||
-    value.includes("vue") ||
-    value.includes("angular")
-  ) {
-    return "PIXEL ARCHITECT";
-  }
-
-  if (
-    value.includes("backend") ||
-    value.includes("back end") ||
-    value.includes("node") ||
-    value.includes("express") ||
-    value.includes("fastapi") ||
-    value.includes("django") ||
-    value.includes("api")
-  ) {
-    return "SYSTEM CRAFTER";
-  }
-
-  if (
-    value.includes("full stack") ||
-    value.includes("fullstack")
-  ) {
-    return "STACK FORGER";
-  }
-
-  if (
-    value.includes("cyber") ||
-    value.includes("security") ||
-    value.includes("ethical hacking") ||
-    value.includes("penetration")
-  ) {
-    return "BUG WHISPERER";
-  }
-
-  if (
-    value.includes("data") ||
-    value.includes("analytics") ||
-    value.includes("sql") ||
-    value.includes("pandas")
-  ) {
-    return "DATA CARTOGRAPHER";
-  }
-
-  if (
-    value.includes("devops") ||
-    value.includes("docker") ||
-    value.includes("kubernetes") ||
-    value.includes("cloud") ||
-    value.includes("aws") ||
-    value.includes("azure")
-  ) {
-    return "SHIP ENGINEER";
-  }
-
-  if (
-    value.includes("mobile") ||
-    value.includes("android") ||
-    value.includes("flutter") ||
-    value.includes("ios")
-  ) {
-    return "POCKET BUILDER";
-  }
-
-  if (
-    value.includes("game") ||
-    value.includes("unity") ||
-    value.includes("unreal")
-  ) {
-    return "REALITY BUILDER";
-  }
+  if (hasTerm(value, ["ai", "ml", "artificial intelligence", "machine learning", "deep learning"])) return "MODEL TAMER";
+  if (hasTerm(value, ["frontend", "front end", "react", "next.js", "nextjs", "vue", "angular"])) return "PIXEL ARCHITECT";
+  if (hasTerm(value, ["backend", "back end", "node", "express", "fastapi", "django", "api"])) return "SYSTEM CRAFTER";
+  if (hasTerm(value, ["full stack", "fullstack"])) return "STACK FORGER";
+  if (hasTerm(value, ["cyber", "security", "ethical hacking", "penetration"])) return "BUG WHISPERER";
+  if (hasTerm(value, ["data", "analytics", "sql", "pandas"])) return "DATA CARTOGRAPHER";
+  if (hasTerm(value, ["devops", "docker", "kubernetes", "cloud", "aws", "azure"])) return "SHIP ENGINEER";
+  if (hasTerm(value, ["mobile", "android", "flutter", "ios"])) return "POCKET BUILDER";
+  if (hasTerm(value, ["game", "unity", "unreal"])) return "REALITY BUILDER";
 
   return "CODE NOMAD";
 }
