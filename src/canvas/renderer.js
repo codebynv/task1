@@ -1827,6 +1827,12 @@ function roundedRect(
 function loadImage(
   src
 ) {
+  if (typeof src !== "string" || src.trim() === "") {
+    return Promise.reject(
+      new Error("A valid image URL is required.")
+    );
+  }
+
   return new Promise(
     (
       resolve,
