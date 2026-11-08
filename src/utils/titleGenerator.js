@@ -1,5 +1,5 @@
 const hasTerm = (value, terms) => {
-  const normalized = String(value).toLowerCase();
+  const normalized = String(value ?? "").toLowerCase();
   return terms.some((term) => {
     const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     return new RegExp(`(^|[^a-z0-9])${escaped}($|[^a-z0-9])`, "i").test(normalized);
@@ -7,7 +7,7 @@ const hasTerm = (value, terms) => {
 };
 
 export function generateBuilderTitle(role = "", stack = "") {
-  const value = `${role} ${stack}`;
+  const value = `${role ?? ""} ${stack ?? ""}`;
 
   if (hasTerm(value, ["ai", "ml", "artificial intelligence", "machine learning", "deep learning"])) return "MODEL TAMER";
   if (hasTerm(value, ["frontend", "front end", "react", "next.js", "nextjs", "vue", "angular"])) return "PIXEL ARCHITECT";
