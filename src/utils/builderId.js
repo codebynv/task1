@@ -32,7 +32,7 @@ export function generateBuilderId(
   persona = "",
   category = ""
 ) {
-  const cleanedName = name
+  const cleanedName = String(name ?? "")
     .replace(/[^a-zA-Z]/g, "")
     .toUpperCase();
 
@@ -42,7 +42,7 @@ export function generateBuilderId(
       .padEnd(2, "X");
 
   const identityKey =
-    `${cleanedName}|${persona}|${category}`
+    `${cleanedName}|${persona ?? ""}|${category ?? ""}`
       .toUpperCase();
 
   const hash =
